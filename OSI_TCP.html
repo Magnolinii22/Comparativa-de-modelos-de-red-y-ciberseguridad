@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a71707a89a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+crossorigin="anonymous">
+<script 
+src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script 
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" 
+integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+crossorigin="anonymous"></script>
+  <title>Modelo OSI y TCP</title>
+  <script>
+
+    function buscar(busqueda){
+      let aplicacion=document.getElementById("aplicacion");
+      let presentacion=document.getElementById("presentacion");
+      let sesion=document.getElementById("sesion");
+      let transporte=document.getElementById("transporte");
+      let red=document.getElementById("red");
+      let enlace=document.getElementById("enlace");
+      let fisica=document.getElementById("fisica");
+
+      $("#aplicacion div").each(function () {
+    $(this).html( "<div>" + $(this).html().split(" ").join("</div> <div>") + "</div>" );});
+    $("#aplicacion div:contains('" + aplicacion + "')").css("color", "#F00");
+    }
+  </script>
+  <style>
+   
+   h1 { 
+      color: #fe0000;
+      background-color: transparent;
+      background-repeat: unset;
+      padding: 10px 1px;
+    }
+    h5{
+      color: #000;
+    }
+   
+    .row {
+      background: transparent;
+      background-repeat: no-repeat;
+    }
+
+    body{
+     height: 100%;
+     background-color: #000;
+      background-repeat:unset;
+    }
+
+    button {
+      height: 40px;
+      background-image: url(img/boton.gif);
+      border-color: transparent;
+      border-radius: 10px;
+    
+      margin: 8px 1px;
+    }
+
+    div {
+      background-color: transparent;
+    }
+
+    button:hover {
+      background-color:black;
+    }
+
+    .container-fluid {
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-center">Configuración de
+    redes</h1>
+  <div class="container text-center">
+
+    <div class="row p-5">
+      <div class="col-1 "></div>
+      <div class="col-5 ">
+        <h1>Modelo OSI</h1>
+        <div  class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal"><h5>Aplicación</h5></button>
+              <div class="modal fade smallExampleModal" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="aplicacion" class="modal-header"><h6>Responsable de los servicios de red para las aplicaciones</h6>
+                      </div></div></div></div></button>
+           <button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal1"><h5>Presentación</h5></button>
+              <div class="modal fade smallExampleModal1" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div  id="presentacion" class="modal-header"><h6>Transforma el formato de los datos y proporciona una interfaz estándar para la capa de aplicación</h6>
+                      </div></div></div></div></button></button></div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal2"><h5>Sesión</h5></button>
+              <div class="modal fade smallExampleModal2" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="sesion" class="modal-header"><h6>Establece, administra y finaliza las conexiones entre las aplicaciones locales y las remotas</h6>
+                      </div></div></div></div></button></button>
+        </div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal3"><h5>Transporte</h5></button>
+              <div class="modal fade smallExampleModal3" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="transporte" class="modal-header"><h6>Proporciona transporte confiable y control del flujo a través de la red</h6>
+                      </div></div></div></div></button></button>
+        </div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal4"><h5>Red</h5></button>
+              <div class="modal fade smallExampleModal4" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="red" class="modal-header"><h6>	Responsable del direccionamiento lógico y el dominio del enrutamiento</h6>
+                      </div></div></div></div></button></button></div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal5"><h5>Enlace de datos</h5></button>
+              <div class="modal fade smallExampleModal5" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="enlace" class="modal-header"><h6>Proporciona direccionamiento físico y procedimientos de acceso a medios</h6>
+                      </div></div></div></div></button>
+            </button></div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal6"><h5>Física</h5></button>
+              <div class="modal fade smallExampleModal6" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="fisica" class="modal-header"><h6>	Define todas las especificaciones eléctricas y físicas de los dispositivos</h6>
+                      </div></div></div></div></button></button>
+        </div>
+      </div>
+
+      <div class="col-1 "></div>
+
+      <div class="col-5 ">
+        <h1>TCP/IP</h1>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal11"><h5>Aplicación</h5></button>
+              <div class="modal fade smallExampleModal11" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="" class="modal-header"><h6>incorpora aplicaciones de red estándar (Telnet, SMTP, FTP, etc.).</h6>
+                      </div></div></div></div></button>
+        </div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal22"><h5>Transporte</h5></button>
+              <div class="modal fade smallExampleModal22" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="" class="modal-header"><h6> brinda los datos de enrutamiento, junto con los mecanismos que permiten conocer el estado de la transmisión. Comprende a los protocolos TCP y UDP.</h6>
+                      </div></div></div></div></button></button>
+        </div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal33"><h5>Internet</h5></button>
+              <div class="modal fade smallExampleModal33" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="" class="modal-header"><h6>es responsable de proporcionar el paquete de datos (datagrama).</h6>
+                      </div></div></div></div></button></button>
+        </div>
+        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal44"><h5>Acceso a la red</h5></button>
+              <div class="modal fade smallExampleModal44" tabindex="-1" role="dialog" 
+          aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                  <div class="modal-content">
+                      <div id="" class="modal-header"><h6>Especifica la forma en la que los datos deben enrutarse, sea cual sea el tipo de red utilizado.</h6>
+                      </div></div></div></div></button></button></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
